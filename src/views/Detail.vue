@@ -40,7 +40,7 @@ export default {
             .get(`https://restcountries.eu/rest/v2/name/${this.getFlag}`)
             .then((response) => {
                 this.paysUnique = response.data[0];
-                console.log(this.paysUnique);
+                // console.log(this.paysUnique);
             });
     },
     computed: {

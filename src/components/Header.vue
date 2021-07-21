@@ -1,7 +1,19 @@
 <template>
     <div class="header">
         <div class="header__flag"></div>
+
         <div class="header__title">
+            <div class="search__wrapper">
+                <form @submit.prevent="GetPaysBySearch(paysName)">
+                    <input
+                        v-model="paysName"
+                        class="search__bar"
+                        type="search"
+                        id=""
+                        placeholder="Chercher un pays d'Europe"
+                    />
+                </form>
+            </div>
             <h1 class="title">Europa flag</h1>
         </div>
     </div>
@@ -10,6 +22,22 @@
 <script>
 export default {
     name: "Header",
+    // props: ["pays"],
+    data() {
+        return {
+            paysName: "",
+        };
+    },
+    methods: {
+        GetPaysBySearch(paysName) {
+            this.$router.push({
+                name: "Detail",
+                params: { Np: paysName },
+            });
+            console.log(this.paysName);
+            this.paysName = "";
+        },
+    },
 };
 </script>
 
@@ -30,6 +58,7 @@ export default {
 .header__title {
     height: 170px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -46,6 +75,15 @@ export default {
 .title {
     color: #2b2c92;
     font-size: 45px;
+}
+.search__bar {
+    border: 3px solid #2b2c92;
+    border-radius: 50px;
+    width: 400px;
+    height: 50px;
+}
+.search__bar:focus {
+    outline: none;
 }
 
 @media screen and (max-width: 380px) {
