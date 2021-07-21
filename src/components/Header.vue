@@ -47,4 +47,24 @@ export default {
     color: #2b2c92;
     font-size: 45px;
 }
+
+@media screen and (max-width: 380px) {
+    .header {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0px;
+    }
+    .header__flag {
+        display: none;
+        /* margin: 0 auto; */
+    }
+    .header__title {
+        margin-top: 12px;
+        position: relative;
+        top: 0;
+    }
+    .title {
+        font-size: 40px;
+    }
+}
 </style>

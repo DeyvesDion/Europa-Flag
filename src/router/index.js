@@ -10,14 +10,14 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
 
   {
-    //  bT: boat Type
-    path: '/datail/:pN',
+    //  Np: Nom Pays
+    path: '/datail-pays/:Np',
     name: 'Detail',
-    component: Detail
+    component: Detail,
   }
 ]
 
